@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>    
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafeteria Las Flores - CBTis 73</title>
+
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #FFFFFF;
+    color: #black;
+    margin: 0;
+  }
+
+  header {
+    background-color: #EBAD42;
+    color: #white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* MENڠ*/
+  nav {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 12px;
+  }
+
+  nav a {
+    font-weight: bold;
+    color: #853F18;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #FFFFFF;
+  }
+
+  nav a.activo {
+    background-color: #A15A2A;
+    color: white;
+  }
+
+  /* PRODUCTOS */
+  .catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .producto {
+    background-color: #A15A2A;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s;
+  }
+
+  .producto:hover { transform: scale(1.03); }
+  .producto img { width: 100%; border-radius: 15px; }
+
+  .btn {
+    background-color: #E4A149;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .btn:hover { background-color: #E4A149; }
+
+  /* SECCIONES */
+  section { display: none; }
+  #inicio { display: block; }
+
+  footer {
+    background-color: #E4A149;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  .contenido {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: auto;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cafeteria Las Flores - CAMM</h1>
+  <p>Almuerzos y postres deliciosos</p>
+</header>
+
+<!-- MENڠ-->
+<nav>
+  <a onclick="mostrar('inicio')">Inicio</a>
+  <a onclick="mostrar('ofertas')">Ofertas</a>
+  <a onclick="mostrar('novedades')">Novedades</a>
+  <a onclick="mostrar('nosotros')">Nosotros</a>
+  <a onclick="mostrar('ayuda')">Ayuda</a>
+  <a onclick="mostrar('contacto')">Contacto</a>
+  <a onclick="mostrar('carrito')">Carrito ??</a>
+</nav>
+
+<!-- INICIO -->
+<section id="inicio" class="contenido">
+  <h2>Cat⭯go de Productos</h2>
+
+  <div class="catalogo">
+
+    <div class="producto">
+      <img src="https://thumbs.dreamstime.com/z/latte-helado-del-t%C3%A9-verde-37689646.jpg?ct=jpeg%22">
+      <h3>Matcha Latte</h3>
+      <p>$70 MXN</p>
+      <button class="btn" onclick="agregar('Matcha latte',70)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.starbucksathome.com/es/sites/default/files/2024-06/Recipe%20Refresh_Iced%20Macchiato_1842x1542_LS.png">
+      <h3>Caramel Macchiato</h3>
+      <p>$95 MXN</p>
+      <button class="btn" onclick="agregar('Caramel Macchiato',95)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.brotgarten.com.mx/wp-content/uploads/2024/09/cuernito-animacion-1-1.jpg">
+      <h3>Cuernito de Nutella</h3>
+      <p>$30 MXN</p>
+      <button class="btn" onclick="agregar('Cuernito de Nutella',30)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://i.pinimg.com/736x/bf/34/db/bf34dbb550a1376643a47035a7d7949d.jpg">
+      <h3>Chilaquiles Verdes</h3>
+      <p>$110 MXN</p>
+      <button class="btn" onclick="agregar('Chilaquiles Verdes',110)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaL17r-SmEDlcrqhvFxz6pw33UIA34rhm-9Q&s%22">
+      <h3>Sandwich de Jamon</h3>
+      <p>$45 MXN</p>
+      <button class="btn" onclick="agregar('Sandwich de Jamon',45)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://www.shutterstock.com/image-photo/chopped-italian-sandwich-hot-dog-600w-2385516119.jpg">
+      <h3>Hot dog</h3>
+      <p>$35 MXN</p>
+      <button class="btn" onclick="agregar('Hot dog',35)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://chefeel.com/chefgeneralfiles/2022/08/beverage-g591632fb0_1920-880x877.jpg">
+      <h3>Frappe de Oreo</h3>
+      <p>$85 MXN</p>
+      <button class="btn" onclick="agregar('Frappe de Oreo',85)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEcZFEsRzGEtzzZAZExV4XWcRgz0nSi5px2w&s%22">
+      <h3>Molletes</h3>
+      <p>$60 MXN</p>
+      <button class="btn" onclick="agregar('Molletes',60)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9iOfQxfl3WscZqmC2wEh09igxU_vR4XdS6w&s%22">
+      <h3>Papas a la francesa</h3>
+      <p>$40 MXN</p>
+      <button class="btn" onclick="agregar('Papas a la francesa', 40)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://www.shutterstock.com/image-photo/eating-individual-pizzas-pizza-bar-260nw-545249974.jpg">
+      <h3>Pizza Individual</h3>
+      <p>$55 MXN</p>
+      <button class="btn" onclick="agregar('Pizza Individual', 55)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOAq3d_J39pHC1kdAxgbBX2xVn_Dvt0QGgWg&s%22">
+      <h3>Brownie de Chocolate</h3>
+      <p>$25 MXN</p>
+      <button class="btn" onclick="agregar('Brownie de Chocolate', 25)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzwg295SuA0MB-qxjWE2ItM8oHMnsSBUL43w&s%22">
+      <h3>Te helado</h3>
+      <p>$30 MXN</p>
+      <button class="btn" onclick="agregar('Te helado', 30)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://img.freepik.com/foto-gratis/panqueques-fresas-chocolate-decorados-hojas-menta_2829-13861.jpg?semt=ais_hybrid&w=740&q=80">
+      <h3>Crepas </h3>
+      <p>$55 MXN</p>
+      <button class="btn" onclick="agregar('Crepas', 55)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGxh8BD0DA2pXdWttkJ5wnK-5PIfPAUP8B0g&s">
+      <h3>Galletas</h3>
+      <p>$15 MXN</p>
+      <button class="btn" onclick="agregar('Galletas', 15)">Agregar</button>
+    </div>
+  
+    <div class="producto">
+      <img src="https://peopleenespanol.com/thmb/KagKptYFlFG7ADN7p7Uy_LbFjhY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/pay-de-queso-al-horno.jpg-2000-8bf4687585a844c7acc10bfc09b8cb9e.jpg">
+      <h3>Pay de Queso rebanda</h3>
+      <p>$45 MXN</p>
+      <button class="btn" onclick="agregar('Pay de Queso rebanda', 45)">Agregar</button>
+    </div>
+  
+  </div>
+</section>
+
+<!-- OFERTAS -->
+<section id="ofertas" class="contenido">
+  <h2> Ofertas Especiales</h2>
+  <p>Aprovecha descuentos de tus postes/almuerzos favoritos por tiempo limitado.</p>
+
+  <ul>
+    <li> Chilaquiles Verdes - Antes $110, ahora $80</li>
+    <li> Frappe de Oreo - Antes $85, ahora $55</li>
+    <li> En la compra de 5 (o mas) Galletas o Brownies 10% de descuento en cualquier compra </li>
+  </ul>
+</section>
+
+<!-- NOVEDADES -->
+<section id="novedades" class="contenido">
+  <h2>Novedades</h2>
+  <p>Los productos recien agregados de la temporada.</p>
+  <ul>
+    <li> Te helado </li>
+    <li> Matcha Latte</li>
+    <li> Papas a la francesa</li>
+  </ul>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="contenido">
+  <h2>Sobre Nosotros...:)</h2>
+  <p>Somos Las Flores, una cafeteria con sabor inigualable y unico. Almuerzos y postres hechos con los mejores ingredientes, asi como bebidas deliciosas y fasinantes.</p>
+  <p>Fundada en 2025 en el CBTis 73.</p>
+</section>
+
+<!-- AYUDA -->
+<section id="ayuda" class="contenido">
+  <h2> Ayuda</h2>
+  <p>ࠔienes dudas? Aqu�e apoyamos.</p>
+  <ul>
+    <li>Tienda fisica abierta de 7:00 am a 10:00 pm.</li>
+    <li>Costo de envio: varia dependiendo la zona, calle, colonia, etc. </li>
+    <li>M굯dos de pago: Tarjeta, transferencia o efectivo.</li>
+  </ul>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contenido">
+  <h2>Cont⤴anos</h2>
+  <p>Correo: CafeteriaLasflores17@gmila.com</p>
+  <p>Telꧯno: +51 5968 6685</p>
+  <p>Direcci󮺠Av. Garcia 177, TAMPS. CDRB</p>
+</section>
+
+<!-- CARRITO -->
+<section id="carrito" class="contenido">
+  <h2>?? Carrito de Compras</h2>
+  <div id="items"></div>
+  <p><strong>Total:</strong> $<span id="total">0</span> MXN</p>
+
+  <a href="finalizar.html">
+    <button class="btn">Finalizar Pedido </button>
+  </a>
+</section>
+
+<footer>
+  <p>ɿ 2025 Cafeteria Las Flores  | CBTis 73</p>
+</footer>
+
+<script>
+let total = 0;
+let items = document.getElementById("items");
+let totalSpan = document.getElementById("total");
+
+function agregar(nombre, precio){
+  let p = document.createElement("p");
+  p.textContent = nombre + " - $" + precio;
+  items.appendChild(p);
+  total += precio;
+  totalSpan.textContent = total;
+}
+
+function mostrar(seccion){
+  let sections = document.querySelectorAll("section");
+  sections.forEach(s => s.style.display = "none");
+  document.getElementById(seccion).style.display = "block";
+
+  // activar pesta񡠥n men򍊠 let links = document.querySelectorAll("nav a");
+  links.forEach(a => a.classList.remove("activo"));
+  event.target.classList.add("activo");
+}
+</script>
+
+</body>
+</html>
